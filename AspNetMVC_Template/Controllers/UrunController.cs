@@ -32,5 +32,20 @@ namespace AspNetMVC_Template.Controllers
             ctx.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult Sil(int id)
+        {
+            Urunler u = ctx.Urunlers.FirstOrDefault(x => x.UrunID == id);
+            return View(u);
+        }
+        [HttpPost]
+        public ActionResult Sil(Urunler u)
+        {
+            Urunler urn = ctx.Urunlers.FirstOrDefault(x => x.UrunID == u.UrunID);
+            ctx.Urunlers.Remove(urn);
+            ctx.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

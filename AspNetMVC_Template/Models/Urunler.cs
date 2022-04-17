@@ -11,7 +11,7 @@ namespace AspNetMVC_Template.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Urunler
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +19,7 @@ namespace AspNetMVC_Template.Models
         {
             this.Satis_Detaylari = new HashSet<Satis_Detaylari>();
         }
-    
+
         public int UrunID { get; set; }
         public string UrunAdi { get; set; }
         public Nullable<int> TedarikciID { get; set; }
@@ -31,7 +31,7 @@ namespace AspNetMVC_Template.Models
         public Nullable<short> EnAzYenidenSatisMikatari { get; set; }
         public byte[] Resim { get; set; }
         public bool Sonlandi { get; set; }
-    
+
         public virtual Kategoriler Kategoriler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Satis_Detaylari> Satis_Detaylari { get; set; }
