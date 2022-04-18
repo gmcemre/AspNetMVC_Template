@@ -39,6 +39,7 @@ namespace AspNetMVC_Template.Controllers
             Urunler u = ctx.Urunlers.FirstOrDefault(x => x.UrunID == id);
             return View(u);
         }
+
         [HttpPost]
         public ActionResult Sil(Urunler u)
         {
