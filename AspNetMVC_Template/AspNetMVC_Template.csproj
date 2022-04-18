@@ -1015,6 +1015,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\KategoriController.cs" />
+    <Compile Include="Controllers\TedarikciController.cs" />
     <Compile Include="Models\Alfabetik_Sirali_Urunler_Listesi.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
@@ -1230,6 +1231,7 @@
     <Content Include="Views\Urun\Sil.cshtml" />
     <Content Include="Views\Kategori\Index.cshtml" />
     <Content Include="Views\Kategori\KategoriEkle.cshtml" />
+    <Content Include="Views\Tedarikci\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

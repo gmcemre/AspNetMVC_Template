@@ -116,7 +116,14 @@
                                         <span class="main-menu-text">Kategoriler</span>
                                     </a>
                                 </li>
-                                
+                                <li class="menu-item-top">
+                                    <a href="/Tedarikci/Index" class="top">
+                                        <span class="main-menu-icon">
+                                            <span aria-hidden="true" class="icon icon-layers icon-size-medium"></span>
+                                        </span>
+                                        <span class="main-menu-text">Tedarikçiler</span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -134,6 +141,8 @@
     </div><!-- /.container -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- Required JS Files -->
+
+    @RenderSection("body",required:false)
     <script type="text/javascript" src="/Content/assets/js/required/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="/Content/assets/js/required/jquery-ui-1.11.0.custom/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/Content/assets/js/required/bootstrap/bootstrap.min.js"></script>
