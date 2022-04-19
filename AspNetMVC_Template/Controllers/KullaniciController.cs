@@ -13,8 +13,6 @@ namespace AspNetMVC_Template.Controllers
         // GET: Kullanici
         public ActionResult Index()
         {
-            NorthwindContext ctx = new NorthwindContext();
-
             MembershipUserCollection users = Membership.GetAllUsers();
             return View(users);
         }
