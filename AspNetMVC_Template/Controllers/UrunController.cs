@@ -10,7 +10,7 @@ namespace AspNetMVC_Template.Controllers
     public class UrunController : Controller
     {
         // GET: Urun
-        NorthwindEntities ctx = new NorthwindEntities();
+        NorthwindContext ctx = new NorthwindContext();
         public ActionResult Index()
         {
             List<Urunler> urunler = ctx.Urunlers.ToList();

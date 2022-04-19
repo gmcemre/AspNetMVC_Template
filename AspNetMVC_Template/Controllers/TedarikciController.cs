@@ -10,7 +10,7 @@ namespace AspNetMVC_Template.Controllers
     public class TedarikciController : Controller
     {
         // GET: Tedarikci
-        NorthwindEntities ctx = new NorthwindEntities();
+        NorthwindContext ctx = new NorthwindContext();
         public ActionResult Index()
         {
             List<Tedarikciler> ted = ctx.Tedarikcilers.ToList();

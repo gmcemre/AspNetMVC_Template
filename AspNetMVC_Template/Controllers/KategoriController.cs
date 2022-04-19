@@ -10,7 +10,7 @@ namespace AspNetMVC_Template.Controllers
     public class KategoriController : Controller
     {
         // GET: Kategori
-        NorthwindEntities ctx = new NorthwindEntities();
+        NorthwindContext ctx = new NorthwindContext();
         public ActionResult Index()
         {
             List<Kategoriler> ktg = ctx.Kategorilers.ToList();
