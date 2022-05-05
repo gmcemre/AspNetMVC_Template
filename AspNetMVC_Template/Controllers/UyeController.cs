@@ -43,5 +43,29 @@ namespace AspNetMVC_Template.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("GirisYap");
         }
+
+        [AllowAnonymous]
+        public ActionResult ParolamiUnuttum()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult ParolamiUnuttum(Kullanici k)
+        {
+            MembershipUser mu = Membership.GetUser(k.KullaniciAdi);
+            if (mu.PasswordQuestion == k.GizliSoru)
+            {
+                string pwd = mu.ResetPassword(k.GizliCevap);
+                mu.ChangePassword(pwd, k.Parola);
+                return RedirectToAction("GirisYap");
+            }
+            else
+            {
+                ViewBag.Message = "Girilen Bilgiler Yanlıştır!";
+                    return View();
+            }
+        }
     }
 }

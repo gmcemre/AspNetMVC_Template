@@ -1180,6 +1180,7 @@
     <Content Include="Views\Role\RolEkle.cshtml" />
     <Content Include="Views\Kullanici\RolAta.cshtml" />
     <Content Include="Views\Uye\GirisYap.cshtml" />
+    <Content Include="Views\Uye\ParolamiUnuttum.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

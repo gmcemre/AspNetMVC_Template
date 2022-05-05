@@ -19,12 +19,14 @@ namespace AspNetMVC_Template.Controllers
             return View(users);
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult KullaniciEkle()
         {
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult KullaniciEkle(Kullanici k)
         {
@@ -81,6 +83,7 @@ namespace AspNetMVC_Template.Controllers
                 return View();
         }
 
+        [Authorize(Roles="Admin")]
         public ActionResult RolAta()
         {
             ViewBag.Roller = Roles.GetAllRoles().ToList();
@@ -88,6 +91,7 @@ namespace AspNetMVC_Template.Controllers
             return View();
         }
 
+        [Authorize(Roles="Admin")]
         [HttpPost]
         public ActionResult RolAta(string KullaniciAdi, string RolAdi)
         {
