@@ -14,6 +14,7 @@
                 <div class="block-controls">
                     <span aria-hidden="true" class="icon icon-arrow-down icon-size-medium block-control-collapse"></span>
                     <a href="/Kullanici/KullaniciEkle" class="btn btn-success rounded">Yeni Üye Ekle</a>
+                    <a class="btn btn-primary " href="/Kullanici/RolAta">Rol Ekle</a>
                 </div>
             </div>
             <div class="block-content-outer">
@@ -25,6 +26,7 @@
                                 <th>Email</th>
                                 <th>Kayıt Tarihi</th>
                                 <th>Son Giriş Tarihi</th>
+                                <th>Rolleri</th>
                                 <th>Sil</th>
                             </tr>
                         </thead>
@@ -36,6 +38,7 @@
                                     <td>@mu.Email</td>
                                     <td>@mu.CreationDate</td>
                                     <td>@mu.LastLoginDate</td>
+                                    <td><a class="btn btn-primary rolleri" data-uyeadi="@mu.UserName">Rolleri</a></td>
                                     <td><a href="#" class="btn btn-danger rounded uyeSil" data-uyeadi="@mu.UserName">Sil</a></td>
                                 </tr>
                             }
@@ -46,3 +49,21 @@
         </div>
     </div>
 </div>
+
+@section scripts{
+
+    <script src="~/Content/assets/js/required/jquery-1.11.1.min.js"></script>
+    <script>
+        $(".rolleri").click(function () {
+            var ka = $(this).data("uyeadi");
+            $.ajax({
+                type: "POST",
+                url: "/Kullanici/UyeRolleri",
+                data: {kullaniciAdi:ka},
+                success: function (veri) {
+                    alert(veri);
+                }
+            });
+        });
+    </script>
+}

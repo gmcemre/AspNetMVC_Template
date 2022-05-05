@@ -1004,8 +1004,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Classes\Kullanici.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\TedarikciController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1172,6 +1174,10 @@
     <Content Include="Views\Kategori\KategoriEkle.cshtml" />
     <Content Include="Views\Tedarikci\Index.cshtml" />
     <Content Include="Views\Kullanici\Index.cshtml" />
+    <Content Include="Views\Kullanici\KullaniciEkle.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\RolEkle.cshtml" />
+    <Content Include="Views\Kullanici\RolAta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
