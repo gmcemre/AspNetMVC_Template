@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace AspNetMVC_Template.Controllers
 {
+    [Authorize]
     public class KategoriController : Controller
     {
         // GET: Kategori

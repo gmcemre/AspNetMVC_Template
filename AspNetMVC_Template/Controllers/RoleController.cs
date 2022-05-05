@@ -7,6 +7,7 @@ using System.Web.Security;
 
 namespace AspNetMVC_Template.Controllers
 {
+    [Authorize]
     public class RoleController : Controller
     {
         // GET: Role

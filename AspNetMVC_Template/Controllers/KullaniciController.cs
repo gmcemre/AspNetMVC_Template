@@ -9,6 +9,7 @@ using System.Web.Security;
 
 namespace AspNetMVC_Template.Controllers
 {
+    [Authorize]
     public class KullaniciController : Controller
     {
         // GET: Kullanici
