@@ -1,7 +1,8 @@
 ﻿@{
     Layout = null;
 }
-
+@using AspNetMVC_Template.App_Classes
+@using AspNetMVC_Template.Models
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,6 +99,51 @@
                                     </li>
                                 </ul>
                             </div>
+                            <div class="header-profile">
+                                <!-- NOTE TO READER: Accepts the following class(es) "animate" class -->
+                                <ul class="header-profile-menu">
+                                    <li>
+                                        <a href="#" class="top">
+                                            <span class="header-profile-menu-icon">
+                                            </span>
+                                            <span class="main-menu-text">
+                                                Sepetim @{
+                                                    int adet = 0;
+                                                    Sepet s = new Sepet();
+                                                    if (Session["AktifSepet"] != null)
+                                                    {
+                                                        s = (Sepet)Session["AktifSepet"];
+                                                        adet = s.Urunler.Count;
+                                                    }
+                                                }
+                                                (@adet)
+                                                <i class="icon icon-arrow-down-bold-round icon-size-small"></i>
+                                            </span>
+                                        </a>
+                                        <ul>
+                                            @if (s.Urunler.Count > 0)
+                                            {
+                                                foreach (Urunler urun in s.Urunler)
+                                                {
+                                                    <li>
+                                                        <a href="/Urun/UrunDetay?id=@urun.UrunID">
+                                                            <span aria-hidden="true" class="icon icon-arrow-curve-right"></span>
+                                                            <span class="main-text">@urun.UrunAdi</span>
+                                                        </a>
+                                                    </li>
+                                                }
+                                                <li>
+                                                    <a href="/Home/Sepetim">
+                                                        <span aria-hidden="true" class="icon icon-arrow-curve-right"></span>
+                                                        <span class="main-text">Sepete Git</span>
+                                                    </a>
+                                                </li>
+                                            }
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
@@ -184,7 +230,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- Required JS Files -->
 
-    @RenderSection("body",required:false)
+    @RenderSection("body", required: false)
     <script type="text/javascript" src="/Content/assets/js/required/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="/Content/assets/js/required/jquery-ui-1.11.0.custom/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/Content/assets/js/required/bootstrap/bootstrap.min.js"></script>

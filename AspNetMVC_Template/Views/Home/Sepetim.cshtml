@@ -1,8 +1,7 @@
 ﻿@using AspNetMVC_Template.Models
 @model List<Urunler>
-
 @{
-    ViewBag.Title = "Ürünler";
+    ViewBag.Title = "Sepetim";
 }
 
 <div class="row">
@@ -10,11 +9,10 @@
         <div class="block">
             <div class="block-heading">
                 <div class="main-text h2">
-                    Ürünler
+                    Sepetim
                 </div>
                 <div class="block-controls">
                     <span aria-hidden="true" class="icon icon-arrow-down icon-size-medium block-control-collapse"></span>
-                    <a href="/Urun/UrunEkle" class="btn btn-success rounded">Yeni Ürün Ekle</a>
                 </div>
             </div>
             <div class="block-content-outer">
@@ -31,7 +29,6 @@
                                 <th>Yeni Satış</th>
                                 <th>En Az Yeniden Satış Miktarı</th>
                                 <th>Sonlandı</th>
-                                <th>Sepete Ekle</th>
                                 <th>Detay</th>
                                 <th>Sil</th>
                             </tr>
@@ -88,7 +85,6 @@
                                             </span>
                                         </td>
                                     }
-                                    <td><a href="#" class="btn btn-default sepeteAt" data-id="@urun.UrunID">Sepete Ekle</a></td>
                                     <td><a href="/Urun/UrunDetay?id=@urun.UrunID&adi=@urun.UrunAdi" class="btn btn-primary">Detay</a></td>
                                     <td><a href="/Urun/Sil/@urun.UrunID" class="btn btn-danger rounded">Sil</a></td>
                                 </tr>
@@ -100,23 +96,5 @@
         </div>
     </div>
 </div>
-
-@section scripts{
-    <script>
-        $(".sepeteAt").click(function () {
-            var id = $(this).data("id");
-            $.ajax({
-                type: "POST",
-                url: "/Urun/SepeteAt/" + id,
-                success: function () {
-                    alert("Ürün Sepete Eklendi.");
-                },
-                error: function () {
-                    alert("Ürün Sepete Eklenirken Hata Oluştu!");
-                }
-            });
-        });
-    </script>
-}
 
 

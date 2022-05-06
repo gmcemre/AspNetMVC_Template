@@ -1005,6 +1005,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Classes\Kullanici.cs" />
+    <Compile Include="App_Classes\Sepet.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
@@ -1181,6 +1182,10 @@
     <Content Include="Views\Kullanici\RolAta.cshtml" />
     <Content Include="Views\Uye\GirisYap.cshtml" />
     <Content Include="Views\Uye\ParolamiUnuttum.cshtml" />
+    <Content Include="Views\Urun\UrunDetay.cshtml" />
+    <Content Include="Views\Home\CookieAta.cshtml" />
+    <Content Include="Views\Home\CookieOku.cshtml" />
+    <Content Include="Views\Home\Sepetim.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace AspNetMVC_Template.Controllers
 {
+    using App_Classes;
     [Authorize]
     public class UrunController : Controller
     {
@@ -48,6 +49,27 @@ namespace AspNetMVC_Template.Controllers
             ctx.Urunlers.Remove(urn);
             ctx.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult UrunDetay()
+        {
+            int id = Convert.ToInt32(Request.QueryString["id"].ToString());
+            string adi = Request.QueryString["adi"].ToString();
+            Urunler u = ctx.Urunlers.FirstOrDefault(x => x.UrunID == id);
+            return View(u);
+        }
+
+        [HttpPost]
+        public void SepeteAt(int id)
+        {
+            Sepet s;
+            if (Session["AktifSepet"] == null)
+                s = new Sepet();
+            else
+                s = (Sepet)Session["AktifSepet"];
+            Urunler u = ctx.Urunlers.FirstOrDefault(x => x.UrunID == id);
+            s.Urunler.Add(u);
+            Session["AktifSepet"] = s;
         }
     }
 }
